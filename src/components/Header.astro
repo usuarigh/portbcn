@@ -21,10 +21,10 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
       <nav class="menu" aria-label={lang === 'ca' ? "Menú principal" : "Menú principal"}>
         <ul>
-          <li><a href={lang === 'ca' ? "https://piernext.portdebarcelona.cat/ca/articles" : "https://piernext.portdebarcelona.cat/articulos"}>{lang === 'ca' ? 'Articles' : 'Artículos'}</a></li>
-          <li><a href={lang === 'ca' ? "https://piernext.portdebarcelona.cat/ca/about" : "https://piernext.portdebarcelona.cat/about"}>{lang === 'ca' ? 'Qui som?' : '¿Quiénes somos?'}</a></li>
-          <li><a href={lang === 'ca' ? "https://piernext.portdebarcelona.cat/ca/experts" : "https://piernext.portdebarcelona.cat/expertos"}>{lang === 'ca' ? 'Experts' : 'Expertos'}</a></li>
-          <li><a href="mailto:piernext@portdebarcelona.cat">{lang === 'ca' ? 'Contacte' : 'Contacto'}</a></li>
+          <li><a href="#" onclick="return false;">{lang === 'ca' ? 'Articles' : 'Artículos'}</a></li>
+          <li><a href="#" onclick="return false;">{lang === 'ca' ? 'Qui som?' : '¿Quiénes somos?'}</a></li>
+          <li><a href="#" onclick="return false;">{lang === 'ca' ? 'Experts' : 'Expertos'}</a></li>
+          <li><a href="#" onclick="return false;">{lang === 'ca' ? 'Contacte' : 'Contacto'}</a></li>
         </ul>
       </nav>
       <div id="language-switcher">
@@ -36,7 +36,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
             </svg>
           </button>
           <ul class="links">
-            <li><a href="https://piernext.portdebarcelona.cat/en/" class="language-link">English</a></li>
+            <li><a href="#" onclick="return false;" class="language-link">English</a></li>
             <li class={lang === 'es' ? 'is-active' : ''}><a href={`${baseUrl}/`} class:list={['language-link', { 'is-active': lang === 'es' }]}>Español</a></li>
             <li class={lang === 'ca' ? 'is-active' : ''}><a href={`${baseUrl}/article-1`} class:list={['language-link', { 'is-active': lang === 'ca' }]}>Català</a></li>
           </ul>
@@ -60,13 +60,13 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
   </button>
   <div id="search-form">
     <div class="views-exposed-form" id="block-piernext-exposedformcercadorpage-1">
-      <form action="https://piernext.portdebarcelona.cat/search" method="get" id="views-exposed-form-cercador-page-1" accept-charset="UTF-8">
+      <form action="#" onsubmit="event.preventDefault(); return false;" id="views-exposed-form-cercador-page-1" accept-charset="UTF-8">
         <div class="js-form-item form-item form-type-textfield form-item-s">
-          <label for="edit-s">¿Qué estás buscando?</label>
-          <input type="text" id="edit-s" name="s" value="" size="30" maxlength="128" class="form-text" placeholder="Buscar en PierNext..." />
+          <label for="edit-s">{lang === 'ca' ? 'Què estàs buscant?' : '¿Qué estás buscando?'}</label>
+          <input type="text" id="edit-s" name="s" value="" size="30" maxlength="128" class="form-text" placeholder={lang === 'ca' ? 'Cercar...' : 'Buscar...'} />
         </div>
         <div class="form-actions form-wrapper" id="edit-actions">
-          <input type="submit" id="edit-submit-cercador" value="Buscar" class="button js-form-submit form-submit" />
+          <input type="button" onclick="return false;" id="edit-submit-cercador" value={lang === 'ca' ? 'Cercar' : 'Buscar'} class="button js-form-submit form-submit" />
         </div>
       </form>
     </div>
