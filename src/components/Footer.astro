@@ -1,4 +1,9 @@
 ---
+interface Props {
+  lang?: string;
+}
+
+const { lang = "es" } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -10,9 +15,12 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
           <div>
             <div id="block-piernext-informaciopeu-2">
               <div>
-                <h3>Sobre PierNext</h3>
+                <h3>{lang === 'ca' ? 'Sobre PierNext' : 'Sobre PierNext'}</h3>
                 <p>
-                  <span>PierNext es un </span><em>hub</em><span> digital de conocimiento impulsado por el Port de Barcelona para divulgar la innovación que está transformando la logística y el comercio internacional, con especial énfasis en el ámbito portuario y marítimo. El cambio está en marcha: en PierNext os lo contamos y anticipamos el futuro de la logística.</span>
+                  <span>{lang === 'ca' 
+                    ? "PierNext és un hub digital de coneixement impulsat pel Port de Barcelona per divulgar la innovació que està transformant la logística i el comerç internacional, amb un èmfasi especial en l'àmbit portuari i marítim. El canvi està en marxa: a PierNext us ho expliquem i anticipem el futur de la logística."
+                    : "PierNext es un hub digital de conocimiento impulsado por el Port de Barcelona para divulgar la innovación que está transformando la logística y el comercio internacional, con especial énfasis en el ámbito portuario y marítimo. El cambio está en marcha: en PierNext os lo contamos y anticipamos el futuro de la logística."
+                  }</span>
                 </p>
               </div>
             </div>
@@ -27,13 +35,13 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
             <nav role="navigation" aria-labelledby="block-piernext-footer-menu" id="block-piernext-footer">
               <h2 class="visually-hidden" id="block-piernext-footer-menu">Footer</h2>
               <ul>
-                <li><a href="https://piernext.portdebarcelona.cat/articulos">Artículos</a></li>
-                <li><a href="https://piernext.portdebarcelona.cat/about">¿Quiénes somos?</a></li>
-                <li><a href="https://piernext.portdebarcelona.cat/expertos">Expertos</a></li>
-                <li><a href="mailto:piernext@portdebarcelona.cat">Contacto</a></li>
-                <li><a href="https://www.portdebarcelona.cat/es/aviso-legal" target="_blank" rel="noopener noreferrer">Aviso legal</a></li>
-                <li><a href="https://www.portdebarcelona.cat/es/politica-de-privacidad" target="_blank" rel="noopener noreferrer">Política de privacidad</a></li>
-                <li><a href="https://piernext.portdebarcelona.cat/politica-cookies">Política de cookies</a></li>
+                <li><a href={lang === 'ca' ? "https://piernext.portdebarcelona.cat/ca/articles" : "https://piernext.portdebarcelona.cat/articulos"}>{lang === 'ca' ? 'Articles' : 'Artículos'}</a></li>
+                <li><a href={lang === 'ca' ? "https://piernext.portdebarcelona.cat/ca/about" : "https://piernext.portdebarcelona.cat/about"}>{lang === 'ca' ? 'Qui som?' : '¿Quiénes somos?'}</a></li>
+                <li><a href={lang === 'ca' ? "https://piernext.portdebarcelona.cat/ca/experts" : "https://piernext.portdebarcelona.cat/expertos"}>{lang === 'ca' ? 'Experts' : 'Expertos'}</a></li>
+                <li><a href="mailto:piernext@portdebarcelona.cat">{lang === 'ca' ? 'Contacte' : 'Contacto'}</a></li>
+                <li><a href={lang === 'ca' ? "https://www.portdebarcelona.cat/ca/avis-legal" : "https://www.portdebarcelona.cat/es/aviso-legal"} target="_blank" rel="noopener noreferrer">{lang === 'ca' ? 'Avís legal' : 'Aviso legal'}</a></li>
+                <li><a href={lang === 'ca' ? "https://www.portdebarcelona.cat/ca/politica-de-privacitat" : "https://www.portdebarcelona.cat/es/politica-de-privacidad"} target="_blank" rel="noopener noreferrer">{lang === 'ca' ? 'Política de privacitat' : 'Política de privacidad'}</a></li>
+                <li><a href={lang === 'ca' ? "https://piernext.portdebarcelona.cat/ca/politica-cookies" : "https://piernext.portdebarcelona.cat/politica-cookies"}>{lang === 'ca' ? 'Política de cookies' : 'Política de cookies'}</a></li>
               </ul>
             </nav>
           </div>

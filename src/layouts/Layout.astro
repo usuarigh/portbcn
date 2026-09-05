@@ -2,31 +2,38 @@
 interface Props {
   title?: string;
   description?: string;
+  lang?: string;
+  image?: string;
+  keywords?: string;
 }
 
 const {
   title = "Hubs de economía azul: BlueTechPort y AltaSea conectan los puertos de Barcelona y Los Ángeles",
-  description = "El acuerdo entre BlueTechPort y AltaSea, los hubs de economía azul de Barcelona y Los Ángeles, ilustra una tendencia que gana fuerza en los grandes puertos del mundo: la creación de centros para impulsar innovación, emprendimiento y nuevas industrias vinculadas a la economía oceánica sostenible."
+  description = "El acuerdo entre BlueTechPort y AltaSea, los hubs de economía azul de Barcelona y Los Ángeles, ilustra una tendencia que gana fuerza en los grandes puertos del mundo: la creación de centros para impulsar innovación, emprendimiento y nuevas industrias vinculadas a la economía oceánica sostenible.",
+  lang = "es",
+  image = "/images/altasea-puerto-los-angeles-hub-economia-azul.jpg",
+  keywords = "hubs de economía azul, economía azul, BlueTechPort, AltaSea, Port de Barcelona, puerto de Los Ángeles, innovación portuaria, economía oceánica sostenible, startups economía azul, World Trade Center Barcelona"
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const ogImage = image.startsWith('http') ? image : `${baseUrl}${image.startsWith('/') ? '' : '/'}${image}`;
 ---
 
 <!DOCTYPE html>
-<html lang="es" dir="ltr" prefix="og: https://ogp.me/ns#">
+<html lang={lang} dir="ltr" prefix="og: https://ogp.me/ns#">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="keywords" content="hubs de economía azul, economía azul, BlueTechPort, AltaSea, Port de Barcelona, puerto de Los Ángeles, innovación portuaria, economía oceánica sostenible, startups economía azul, World Trade Center Barcelona" />
+  <meta name="keywords" content={keywords} />
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:site_name" content="Piernext" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content={`${baseUrl}/images/altasea-puerto-los-angeles-hub-economia-azul.jpg`} />
+  <meta property="og:image" content={ogImage} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
