@@ -1,0 +1,99 @@
+---
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<header role="banner" id="header">
+  <div class="container-header">
+    <div class="first-block">
+      <a href={`${baseUrl}/`} rel="home" id="logo">
+        <img src={`${baseUrl}/icons/logo.svg`} alt="Página principal de PierNext - Port de Barcelona" />
+      </a>
+      <div class="slogan"></div>
+    </div>
+    <div class="second-block" id="main-menu">
+      <div class="link-newsletter">
+        <a href="#newsletter">¡Suscríbete a nuestro newsletter!</a>
+      </div>
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="https://piernext.portdebarcelona.cat/articulos">Artículos</a></li>
+          <li><a href="https://piernext.portdebarcelona.cat/about">¿Quiénes somos?</a></li>
+          <li><a href="https://piernext.portdebarcelona.cat/expertos">Expertos</a></li>
+          <li><a href="mailto:piernext@portdebarcelona.cat">Contacto</a></li>
+        </ul>
+      </nav>
+      <div id="language-switcher">
+        <div class="language-switcher-language-url" id="block-piernext-alternadordeidioma" role="navigation">
+          <button type="button" class="active-lang" aria-label="Cambiar idioma" aria-expanded="false">
+            Español
+            <svg class="icon" aria-hidden="true" width="12" height="8" viewBox="0 0 12 8">
+              <path d="M1 1l5 5 5-5" stroke="#000f37" stroke-width="2" fill="none" stroke-linecap="round" />
+            </svg>
+          </button>
+          <ul class="links">
+            <li><a href="https://piernext.portdebarcelona.cat/en/environment/blue-economy-hubs-bluetechport-altasea-connect-ports-barcelona-angeles" class="language-link">English</a></li>
+            <li class="is-active" aria-current="page"><a href={`${baseUrl}/`} class="language-link is-active">Español</a></li>
+            <li><a href="https://piernext.portdebarcelona.cat/ca/medi-ambient/hubs-deconomia-blava-bluetechport-altasea-connecten-ports-barcelona-angeles" class="language-link">Català</a></li>
+          </ul>
+        </div>
+      </div>
+      <button popovertarget="search-popover" class="search-icon" aria-controls="search-popover" aria-expanded="false" aria-label="Open search">
+        <img src={`${baseUrl}/icons/lupa.svg`} alt="Buscar" />
+      </button>
+    </div>
+    <button type="button" class="btn-menu-mobile" aria-label="Open menu" aria-expanded="false" aria-controls="main-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<div popover id="search-popover" role="dialog" aria-label="Buscar">
+  <button type="button" class="close-search" popovertarget="search-popover" popovertargetaction="hide" aria-label="Cerrar la búsqueda">
+    <span aria-hidden="true"></span>
+  </button>
+  <div id="search-form">
+    <div class="views-exposed-form" id="block-piernext-exposedformcercadorpage-1">
+      <form action="https://piernext.portdebarcelona.cat/search" method="get" id="views-exposed-form-cercador-page-1" accept-charset="UTF-8">
+        <div class="js-form-item form-item form-type-textfield form-item-s">
+          <label for="edit-s">¿Qué estás buscando?</label>
+          <input type="text" id="edit-s" name="s" value="" size="30" maxlength="128" class="form-text" placeholder="Buscar en PierNext..." />
+        </div>
+        <div class="form-actions form-wrapper" id="edit-actions">
+          <input type="submit" id="edit-submit-cercador" value="Buscar" class="button js-form-submit form-submit" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile menu toggle
+  const btnMobile = document.querySelector('.btn-menu-mobile');
+  const mainMenu = document.getElementById('main-menu');
+  if (btnMobile && mainMenu) {
+    btnMobile.addEventListener('click', () => {
+      const expanded = btnMobile.getAttribute('aria-expanded') === 'true';
+      btnMobile.setAttribute('aria-expanded', String(!expanded));
+      mainMenu.classList.toggle('open');
+      btnMobile.classList.toggle('active');
+    });
+  }
+
+  // Language switcher toggle
+  const langBtn = document.querySelector('.active-lang');
+  const langBlock = document.getElementById('block-piernext-alternadordeidioma');
+  if (langBtn && langBlock) {
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langBlock.classList.toggle('open');
+      const expanded = langBtn.getAttribute('aria-expanded') === 'true';
+      langBtn.setAttribute('aria-expanded', String(!expanded));
+    });
+    document.addEventListener('click', () => {
+      langBlock.classList.remove('open');
+      langBtn.setAttribute('aria-expanded', 'false');
+    });
+  }
+</script>

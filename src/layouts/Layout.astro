@@ -1,0 +1,113 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Hubs de economía azul: BlueTechPort y AltaSea conectan los puertos de Barcelona y Los Ángeles",
+  description = "El acuerdo entre BlueTechPort y AltaSea, los hubs de economía azul de Barcelona y Los Ángeles, ilustra una tendencia que gana fuerza en los grandes puertos del mundo: la creación de centros para impulsar innovación, emprendimiento y nuevas industrias vinculadas a la economía oceánica sostenible."
+} = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!DOCTYPE html>
+<html lang="es" dir="ltr" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="hubs de economía azul, economía azul, BlueTechPort, AltaSea, Port de Barcelona, puerto de Los Ángeles, innovación portuaria, economía oceánica sostenible, startups economía azul, World Trade Center Barcelona" />
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:site_name" content="Piernext" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content={`${baseUrl}/images/altasea-puerto-los-angeles-hub-economia-azul.jpg`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href={`${baseUrl}/favicon.ico`} type="image/vnd.microsoft.icon" />
+
+  <!-- Preload Fonts -->
+  <link rel="preload" href={`${baseUrl}/fonts/barlow-regular.woff2`} as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" href={`${baseUrl}/fonts/barlow-medium.woff2`} as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" href={`${baseUrl}/fonts/barlow-semibold.woff2`} as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" href={`${baseUrl}/fonts/barlow-bold.woff2`} as="font" type="font/woff2" crossorigin="anonymous" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href={`${baseUrl}/css/theme-1.css`} />
+  <link rel="stylesheet" href={`${baseUrl}/css/theme-2.css`} />
+
+  <style is:global>
+    /* Modern typography enhancements */
+    h1, h2, h3, h4, h5, h6 {
+      text-wrap: balance;
+    }
+    p, li {
+      text-wrap: pretty;
+    }
+
+    /* Fix image rendering within standard containers */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* FAQ accordion styling override to guarantee exact styling */
+    .piernext-faq details {
+      border: 1px solid #0073CE;
+      border-radius: 6px;
+      padding: 0.8em 1em;
+      margin-bottom: 0.5em;
+      background: #0073CE;
+      color: #FFFFFF;
+      transition: background-color 0.2s ease;
+    }
+    .piernext-faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      outline: none;
+      color: #FFFFFF;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .piernext-faq summary::-webkit-details-marker {
+      display: none;
+    }
+    .piernext-faq summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      font-weight: 300;
+      transition: transform 0.2s ease;
+    }
+    .piernext-faq details[open] summary::after {
+      content: '−';
+    }
+    .piernext-faq details div {
+      margin-top: 0.8em;
+      line-height: 1.5;
+      color: #FFFFFF;
+    }
+    .piernext-faq details div p {
+      color: #FFFFFF;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="visually-hidden focusable">Pasar al contenido principal</a>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="layout-container">
+      <slot />
+    </div>
+  </div>
+</body>
+</html>
