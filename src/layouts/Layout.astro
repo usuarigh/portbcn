@@ -100,6 +100,126 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
       color: #FFFFFF;
       margin-bottom: 0.5em;
     }
+
+    /* Related articles section pixel-perfect replica */
+    .related-articles-section {
+      background-color: rgba(231, 231, 231, 0.56);
+      padding: 40px 0 80px 0;
+    }
+    .related-articles-section h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: #000f37;
+      letter-spacing: -0.02em;
+    }
+    .related-articles-section .grid-3-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    @media (max-width: 992px) {
+      .related-articles-section .grid-3-cols {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+    @media (max-width: 640px) {
+      .related-articles-section .grid-3-cols {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+    .article-relacionat {
+      position: relative;
+      cursor: pointer;
+    }
+    .article-relacionat .image {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      aspect-ratio: 400 / 310;
+      width: 100%;
+      background: #e0e0e0;
+    }
+    .article-relacionat .image a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .article-relacionat .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 22px;
+      transition: transform 0.35s ease;
+    }
+    .article-relacionat:hover .image img {
+      transform: scale(1.05);
+    }
+    .article-relacionat .tags {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .article-relacionat .tags .link-categories {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-bottom: 0;
+      max-width: calc(100% - 20px);
+    }
+    .article-relacionat .taxonomy-link {
+      border-radius: 20px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 4px 14px !important;
+      height: auto !important;
+      pointer-events: auto;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .article-relacionat .taxonomy-link a {
+      color: #ffffff !important;
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      line-height: 1.2 !important;
+      padding: 0 !important;
+      display: inline-block !important;
+    }
+    .article-relacionat .taxonomy-link.logistics {
+      background-color: #c1271a !important;
+    }
+    .article-relacionat .taxonomy-link.economy {
+      background-color: #b9540f !important;
+    }
+    .article-relacionat .taxonomy-link.environment {
+      background-color: #2f6f24 !important;
+    }
+    .article-relacionat .taxonomy-link:hover {
+      opacity: 0.9 !important;
+    }
+    .article-relacionat .title {
+      margin-top: 15px;
+    }
+    .article-relacionat .title a {
+      font-size: 19px;
+      line-height: 1.25;
+      font-weight: 500;
+      color: #000f37;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: block;
+    }
+    .article-relacionat .title a:hover {
+      color: #0073ce;
+    }
   </style>
 </head>
 <body>
