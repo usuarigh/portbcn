@@ -10,10 +10,10 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 <header role="banner" id="header">
   <div class="container-header">
     <div class="first-block">
-      <a href="#" onclick="return false;" rel="home" id="logo">
-        <img src={`${baseUrl}/icons/logo.svg`} alt={lang === 'ca' ? "Pàgina principal de PierNext - Port de Barcelona" : "Página principal de PierNext - Port de Barcelona"} />
+      <a href={`${baseUrl}/article-1/`} rel="home" id="logo" aria-label={lang === 'ca' ? "Pàgina principal de PierNext - Port de Barcelona" : "Página principal de PierNext - Port de Barcelona"}>
+        <img src={`${baseUrl}/icons/logo.svg`} alt="" aria-hidden="true" />
       </a>
-      <div class="slogan"></div>
+      <div class="slogan" aria-hidden="true"></div>
     </div>
     <div class="second-block" id="main-menu">
       <div class="link-newsletter">
@@ -28,25 +28,25 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
         </ul>
       </nav>
       <div id="language-switcher">
-        <div class="language-switcher-language-url" id="block-piernext-alternadordeidioma" role="navigation">
-          <button type="button" class="active-lang" aria-label={lang === 'ca' ? "Canviar idioma" : "Cambiar idioma"} aria-expanded="false">
+        <div class="language-switcher-language-url" id="block-piernext-alternadordeidioma" role="navigation" aria-label={lang === 'ca' ? "Selector d'idioma" : "Selector de idioma"}>
+          <button type="button" class="active-lang" aria-label={lang === 'ca' ? "Canviar idioma. Idioma seleccionat: Català" : "Cambiar idioma. Idioma seleccionado: Español"} aria-expanded="false" aria-haspopup="true">
             {lang === 'ca' ? 'Català' : 'Español'}
-            <svg class="icon" aria-hidden="true" width="12" height="8" viewBox="0 0 12 8">
+            <svg class="icon" aria-hidden="true" focusable="false" width="12" height="8" viewBox="0 0 12 8">
               <path d="M1 1l5 5 5-5" stroke="#000f37" stroke-width="2" fill="none" stroke-linecap="round" />
             </svg>
           </button>
           <ul class="links">
-            <li><a href="#" onclick="return false;" class="language-link">English</a></li>
-            <li class={lang === 'es' ? 'is-active' : ''}><a href="#" onclick="return false;" class:list={['language-link', { 'is-active': lang === 'es' }]}>Español</a></li>
-            <li class={lang === 'ca' ? 'is-active' : ''}><a href="#" onclick="return false;" class:list={['language-link', { 'is-active': lang === 'ca' }]}>Català</a></li>
+            <li><a href="#" onclick="return false;" class="language-link" hreflang="en" lang="en">English</a></li>
+            <li class={lang === 'es' ? 'is-active' : ''}><a href="#" onclick="return false;" class:list={['language-link', { 'is-active': lang === 'es' }]} hreflang="es" lang="es">Español</a></li>
+            <li class={lang === 'ca' ? 'is-active' : ''}><a href="#" onclick="return false;" class:list={['language-link', { 'is-active': lang === 'ca' }]} hreflang="ca" lang="ca">Català</a></li>
           </ul>
         </div>
       </div>
-      <button popovertarget="search-popover" class="search-icon" aria-controls="search-popover" aria-expanded="false" aria-label="Open search">
-        <img src={`${baseUrl}/icons/lupa.svg`} alt="Buscar" />
+      <button popovertarget="search-popover" class="search-icon" aria-controls="search-popover" aria-expanded="false" aria-label={lang === 'ca' ? "Obrir el cercador" : "Abrir el buscador"}>
+        <img src={`${baseUrl}/icons/lupa.svg`} alt="" aria-hidden="true" />
       </button>
     </div>
-    <button type="button" class="btn-menu-mobile" aria-label="Open menu" aria-expanded="false" aria-controls="main-menu">
+    <button type="button" class="btn-menu-mobile" aria-label={lang === 'ca' ? "Obrir menú principal" : "Abrir menú principal"} aria-expanded="false" aria-controls="main-menu">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -54,8 +54,8 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
   </div>
 </header>
 
-<div popover id="search-popover" role="dialog" aria-label="Buscar">
-  <button type="button" class="close-search" popovertarget="search-popover" popovertargetaction="hide" aria-label="Cerrar la búsqueda">
+<div popover id="search-popover" role="dialog" aria-modal="true" aria-label={lang === 'ca' ? "Cercador de PierNext" : "Buscador de PierNext"}>
+  <button type="button" class="close-search" popovertarget="search-popover" popovertargetaction="hide" aria-label={lang === 'ca' ? "Tancar el cercador" : "Cerrar la búsqueda"}>
     <span aria-hidden="true"></span>
   </button>
   <div id="search-form">
@@ -63,7 +63,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
       <form action="#" onsubmit="event.preventDefault(); return false;" id="views-exposed-form-cercador-page-1" accept-charset="UTF-8">
         <div class="js-form-item form-item form-type-textfield form-item-s">
           <label for="edit-s">{lang === 'ca' ? 'Què estàs buscant?' : '¿Qué estás buscando?'}</label>
-          <input type="text" id="edit-s" name="s" value="" size="30" maxlength="128" class="form-text" placeholder={lang === 'ca' ? 'Cercar...' : 'Buscar...'} />
+          <input type="search" id="edit-s" name="s" value="" size="30" maxlength="128" class="form-text" placeholder={lang === 'ca' ? 'Cercar...' : 'Buscar...'} autocomplete="off" />
         </div>
         <div class="form-actions form-wrapper" id="edit-actions">
           <input type="button" onclick="return false;" id="edit-submit-cercador" value={lang === 'ca' ? 'Cercar' : 'Buscar'} class="button js-form-submit form-submit" />

@@ -22,17 +22,17 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
           <article class="article-detail">
             <!-- Header Article -->
             <div class="header-article container-medium">
-              <div class="link-categories">
-                <div class="taxonomy-link logistics">
+              <div class="link-categories" role="list" aria-label="Categories de l'article">
+                <div class="taxonomy-link logistics" role="listitem">
                   <a href="#" onclick="return false;">Logística</a>
                 </div>
-                <div class="taxonomy-link technology">
+                <div class="taxonomy-link technology" role="listitem">
                   <a href="#" onclick="return false;">Tecnologia</a>
                 </div>
               </div>
               <h1>Quan el GPS menteix: el risc invisible que amenaça vaixells i ports</h1>
               <div class="texto-lead">
-                Dos nous anglicismes, <em>jamming</em> i <em>spoofing</em>, han irromput en el vocabulari marítim per designar les interferències cada vegada més habituals en els sistemes globals de navegació per satèl·lit (GNSS). El primer pot deixar un vaixell sense posicionament. El segon és encara més inquietant: proporciona una posició falsa aparentment real. Es tracta d’una tendència en augment que obliga vaixells i ports a preparar-se per navegar en un món en què ja no sempre es pot confiar en el punt que apareix a la pantalla.
+                Dos nous anglicismes, <em lang="en">jamming</em> i <em lang="en">spoofing</em>, han irromput en el vocabulari marítim per designar les interferències cada vegada més habituals en els sistemes globals de navegació per satèl·lit (GNSS). El primer pot deixar un vaixell sense posicionament. El segon és encara més inquietant: proporciona una posició falsa aparentment real. Es tracta d’una tendència en augment que obliga vaixells i ports a preparar-se per navegar en un món en què ja no sempre es pot confiar en el punt que apareix a la pantalla.
               </div>
             </div>
 
@@ -43,11 +43,11 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                   <div class="authors-block">
                     <div class="d-flex author-small">
                       <div class="image">
-                        <img loading="lazy" src={`${baseUrl}/images/usuari-1.jpg`} width="70" height="70" alt="PierNext" />
+                        <img loading="lazy" src={`${baseUrl}/images/usuari-1.jpg`} width="70" height="70" alt="" aria-hidden="true" />
                       </div>
                       <div class="info">
                         <div class="name">
-                          <a href="#" onclick="return false;">
+                          <a href="#" onclick="return false;" aria-label="Articles publicats per PierNext">
                             <div>PierNext</div>
                           </a>
                         </div>
@@ -55,14 +55,14 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                     </div>
                   </div>
                   <div class="share-block">
-                    <div class="date-publication">Publicat el 15/07/2026</div>
-                    <span class="label-share">Compartir</span>
-                    <div class="a2a_kit a2a_kit_size_16 a2a_default_style">
-                      <a class="a2a_button_facebook" href="#" onclick="return false;" aria-label="Share on Facebook"></a>
-                      <a class="a2a_button_x" href="#" onclick="return false;" aria-label="Share on X"></a>
-                      <a class="a2a_button_linkedin" href="#" onclick="return false;" aria-label="Share on LinkedIn"></a>
-                      <a class="a2a_button_whatsapp" href="#" onclick="return false;" aria-label="Share on WhatsApp"></a>
-                      <a class="a2a_button_email" href="#" onclick="return false;" aria-label="Share by email"></a>
+                    <div class="date-publication">Publicat el <time datetime="2026-07-15">15/07/2026</time></div>
+                    <span class="label-share" id="share-label-article-1">Compartir</span>
+                    <div class="a2a_kit a2a_kit_size_16 a2a_default_style" role="group" aria-labelledby="share-label-article-1">
+                      <a class="a2a_button_facebook" href="#" onclick="return false;" aria-label="Comparteix aquest article a Facebook"></a>
+                      <a class="a2a_button_x" href="#" onclick="return false;" aria-label="Comparteix aquest article a X"></a>
+                      <a class="a2a_button_linkedin" href="#" onclick="return false;" aria-label="Comparteix aquest article a LinkedIn"></a>
+                      <a class="a2a_button_whatsapp" href="#" onclick="return false;" aria-label="Comparteix aquest article per WhatsApp"></a>
+                      <a class="a2a_button_email" href="#" onclick="return false;" aria-label="Comparteix aquest article per correu electrònic"></a>
                     </div>
                   </div>
                 </div>
@@ -91,10 +91,10 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
               <div class="paragraph paragraph-text bundle-table paragraph--type--text paragraph--view-mode--default">
                 <div>
                   <p dir="ltr">
-                    <span>La setmana del 19 de juny de 2017, un vaixell que navegava pel nord-est del mar Negre va començar a tenir problemes amb el GPS. El senyal apareixia i desapareixia i, en alguns moments, indicava una posició incorrecta. Podia haver estat una avaria de l’aparell, si no fos perquè més de vint vaixells que es trobaven a la mateixa zona van comunicar exactament el mateix. L’</span><a href="#" onclick="return false;"><strong>Administració Marítima dels Estats Units</strong></a><span> va emetre un avís internacional: els navegants havien d’extremar les precaucions i informar de qualsevol anomalia.</span>
+                    <span>La setmana del 19 de juny de 2017, un vaixell que navegava pel nord-est del mar Negre va començar a tenir problemes amb el GPS. El senyal apareixia i desapareixia i, en alguns moments, indicava una posició incorrecta. Podia haver estat una avaria de l’aparell, si no fos perquè més de vint vaixells que es trobaven a la mateixa zona van comunicar exactament el mateix. L’</span><a href="https://www.navcen.uscg.gov/?pageName=gpsUserInput" target="_blank" rel="noopener noreferrer"><strong>Administració Marítima dels Estats Units</strong><span class="visually-hidden"> (s'obre en una pestanya nova)</span></a><span> va emetre un avís internacional: els navegants havien d’extremar les precaucions i informar de qualsevol anomalia.</span>
                   </p>
                   <p dir="ltr">
-                    <span>Gairebé una dècada després, aquell episodi ja no sembla una excepcionalitat. El </span><a href="#" onclick="return false;"><strong>Global Risks Report 2026</strong></a><span> adverteix que els sistemes de navegació per satèl·lit, essencials per al transport marítim i aeri i per a les cadenes logístiques, estan sent objecte d’atacs de <em>jamming</em> i <em>spoofing</em> “cada vegada més freqüents i sofisticats”. L’informe considera que els governs en són els principals responsables, però alerta que actors no estatals també poden accedir a tecnologies comercials capaces d’interferir els senyals.</span>
+                    <span>Gairebé una dècada després, aquell episodi ja no sembla una excepcionalitat. El </span><a href="https://www.weforum.org/publications/global-risks-report-2026/in-full/global-risks-report-2026-chapter-2/" target="_blank" rel="noopener noreferrer"><strong lang="en">Global Risks Report 2026</strong><span class="visually-hidden"> (s'obre en una pestanya nova)</span></a><span> adverteix que els sistemes de navegació per satèl·lit, essencials per al transport marítim i aeri i per a les cadenes logístiques, estan sent objecte d’atacs de <em lang="en">jamming</em> i <em lang="en">spoofing</em> “cada vegada més freqüents i sofisticats”. L’informe considera que els governs en són els principals responsables, però alerta que actors no estatals també poden accedir a tecnologies comercials capaces d’interferir els senyals.</span>
                   </p>
 
                   <h2><span>Dues maneres d’enganyar un vaixell</span></h2>
@@ -102,32 +102,32 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                     <span>Quan parlem de GNSS no ens referim només al GPS nord-americà. El terme engloba també constel·lacions com el Galileo europeu, el GLONASS rus o el BeiDou xinès. Totes elles proporcionen informació de posicionament, navegació i temps a vaixells, avions, vehicles i infraestructures logístiques.</span>
                   </p>
                   <p dir="ltr">
-                    <span>El <em>jamming</em> consisteix a saturar les freqüències que utilitzen aquests satèl·lits. El receptor perd el senyal, deixa de calcular la posició o comença a oferir dades inestables. És com intentar sentir una veu enmig d’un soroll ensordidor.</span>
+                    <span>El <em lang="en">jamming</em> consisteix a saturar les freqüències que utilitzen aquests satèl·lits. El receptor perd el senyal, deixa de calcular la posició o comença a oferir dades inestables. És com intentar sentir una veu enmig d’un soroll ensordidor.</span>
                   </p>
                   <p dir="ltr">
-                    <span>L’<em>spoofing</em> és més subtil. En lloc de tapar el senyal, l’atacant n’emet un de fals que imita el legítim. L’aparell continua funcionant i mostra una posició aparentment coherent, però el vaixell no és on la pantalla diu que és.</span>
+                    <span>L’<em lang="en">spoofing</em> és més subtil. En lloc de tapar el senyal, l’atacant n’emet un de fals que imita el legítim. L’aparell continua funcionant i mostra una posició aparentment coherent, però el vaixell no és on la pantalla diu que és.</span>
                   </p>
                   <p dir="ltr">
-                    <span>Aquesta vulnerabilitat té una explicació física. Els satèl·lits orbiten a uns 20.000 quilòmetres de la Terra i els seus senyals arriben a la superfície amb molt poca potència. Per això, una interferència emesa des d’un punt relativament pròxim pot imposar-se sobre el senyal autèntic, segons explica l’</span><a href="#" onclick="return false;"><strong>IALA, l’organització internacional d’ajudes a la navegació marítima</strong></a><span>.</span>
+                    <span>Aquesta vulnerabilitat té una explicació física. Els satèl·lits orbiten a uns 20.000 quilòmetres de la Terra i els seus senyals arriben a la superfície amb molt poca potència. Per això, una interferència emesa des d’un punt relativament pròxim pot imposar-se sobre el senyal autèntic, segons explica l’</span><a href="https://www.iala.int/e-bulletin/gnss-jamming-and-spoofing-navigating-challenges-in-the-baltic-sea/" target="_blank" rel="noopener noreferrer"><strong>IALA, l’organització internacional d’ajudes a la navegació marítima</strong><span class="visually-hidden"> (s'obre en una pestanya nova)</span></a><span>.</span>
                   </p>
                   <p dir="ltr">
                     <span>No cal, doncs, entrar en la xarxa informàtica del vaixell ni introduir-hi cap programa maliciós. N’hi ha prou d’alterar l’entorn radioelèctric. Això explica per què les proteccions informàtiques convencionals no poden resoldre, per si soles, el problema.</span>
                   </p>
 
                   <!-- Highlighted callout -->
-                  <div class="paragraph paragraph-titulo-texto-destacado bundle-title-text-highlighted">
+                  <blockquote class="paragraph paragraph-titulo-texto-destacado bundle-title-text-highlighted">
                     <p>«Davant d’aquesta nova vulnerabilitat, el port més intel·ligent no serà el que disposi de més dades, sinó el que sàpiga quan ha arribat el moment de dubtar-ne.»</p>
-                  </div>
+                  </blockquote>
 
                   <h2><span>Un fenomen difícil d’amagar</span></h2>
                   <p dir="ltr">
-                    <span>El març de 2025, la Unió Internacional de Telecomunicacions, l’Organització d’Aviació Civil Internacional i l’Organització Marítima Internacional van emetre un </span><a href="#" onclick="return false;"><strong>avís conjunt</strong></a><span> expressant la seva “enorme preocupació” per l’augment d’aquestes interferències, una tendència ascendent des del 2019 segons la UIT.</span>
+                    <span>El març de 2025, la Unió Internacional de Telecomunicacions, l’Organització d’Aviació Civil Internacional i l’Organització Marítima Internacional van emetre un </span><a href="https://www.itu.int/hub/2025/03/un-agencies-warn-of-satellite-navigation-jamming-and-spoofing/" target="_blank" rel="noopener noreferrer"><strong>avís conjunt</strong><span class="visually-hidden"> (s'obre en una pestanya nova)</span></a><span> expressant la seva “enorme preocupació” per l’augment d’aquestes interferències, una tendència ascendent des del 2019 segons la UIT.</span>
                   </p>
                   <p dir="ltr">
-                    <span>En l’àmbit de l’aviació, que disposa d’un </span><a href="#" onclick="return false;"><strong>pla de l’EASA i la IATA contra les interferències GNSS</strong></a><span> més desenvolupat, ja es poden posar xifres: segons la l’IATA, els episodis de pèrdua de senyal GPS van créixer un <strong>220% entre 2021 i 2024</strong>.</span>
+                    <span>En l’àmbit de l’aviació, que disposa d’un </span><a href="https://www.easa.europa.eu/en/newsroom-and-events/press-releases/easa-and-iata-outline-comprehensive-plan-mitigate-gnss" target="_blank" rel="noopener noreferrer"><strong>pla de l’EASA i la IATA contra les interferències GNSS</strong><span class="visually-hidden"> (s'obre en una pestanya nova)</span></a><span> més desenvolupat, ja es poden posar xifres: segons la l’IATA, els episodis de pèrdua de senyal GPS van créixer un <strong>220% entre 2021 i 2024</strong>.</span>
                   </p>
                   <p dir="ltr">
-                    <span>En l’àmbit marítim, un </span><a href="#" onclick="return false;"><strong>Informe marítim del Royal Institute of Navigation</strong></a><span> publicat el gener de 2026 pel Royal Institute of Navigation va recollir el testimoni de més de <strong>100 especialistes i 300 capitans de vaixell</strong>. La seva conclusió és que centenars de vaixells pateixen diàriament algun tipus d’interferència GNSS.</span>
+                    <span>En l’àmbit marítim, un </span><a href="https://rin.org.uk/blogpost/1706945/516696/Industry-maritime-report-highlights-growing-need-for-GNSS-resilience" target="_blank" rel="noopener noreferrer"><strong>Informe marítim del <span lang="en">Royal Institute of Navigation</span></strong><span class="visually-hidden"> (s'obre en una pestanya nova)</span></a><span> publicat el gener de 2026 pel Royal Institute of Navigation va recollir el testimoni de més de <strong>100 especialistes i 300 capitans de vaixell</strong>. La seva conclusió és que centenars de vaixells pateixen diàriament algun tipus d’interferència GNSS.</span>
                   </p>
 
                   <h2><span>Quan la mateixa mentida passa d’una pantalla a l’altra</span></h2>
@@ -138,7 +138,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                     <span>El problema és que la posició calculada pel receptor GNSS no acostuma a quedar reclosa en un únic aparell. Pot alimentar la carta electrònica ECDIS, l’AIS, les superposicions del radar o els sistemes de seguiment automàtic. Si tots beuen de la mateixa font, comparar les pantalles serveix de poc: cadascuna pot estar repetint la mateixa mentida.</span>
                   </p>
                   <p dir="ltr">
-                    <span>La Maritime and Coastguard Agency britànica adverteix que una informació GNSS incorrecta pot propagar-se per diferents equips del pont de comandament gairebé sense donar senyals evidents al navegant. Per això, a la seva </span><a href="#" onclick="return false;"><strong>Guia sobre ajudes electròniques a la navegació</strong></a><span> recomana contrastar la posició amb el radar, les observacions visuals i altres fonts independents.</span>
+                    <span>La <span lang="en">Maritime and Coastguard Agency</span> britànica adverteix que una informació GNSS incorrecta pot propagar-se per diferents equips del pont de comandament gairebé sense donar senyals evidents al navegant. Per això, a la seva </span><a href="https://www.gov.uk/government/publications/mgn-379-mf-amendment-1-use-of-electronic-navigational-aids/mgn-379-mf-amendment-1-use-of-electronic-navigational-aids" target="_blank" rel="noopener noreferrer"><strong>Guia sobre ajudes electròniques a la navegació</strong><span class="visually-hidden"> (s'obre en una pestanya nova)</span></a><span> recomana contrastar la posició amb el radar, les observacions visuals i altres fonts independents.</span>
                   </p>
                   <p dir="ltr">
                     <span>Per als ports, el risc va més enllà de la seguretat d’un sol vaixell. Una interferència pot obligar a retardar una entrada, modificar una ruta o suspendre una maniobra. També pot afectar la confiança en la informació que comparteixen el vaixell, el pràctic, els remolcadors, la terminal i els serveis de control del trànsit.</span>
@@ -152,7 +152,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                     <span>La Unió Internacional de Telecomunicacions (ITU), l’Organització d’Aviació Civil Internacional (ICAO) i l’Organització Marítima Internacional (IMO) reclamen que es mantingui una infraestructura convencional de navegació com a sistema de reserva. Al mar Bàltic, per exemple, s’està desenvolupant l’<strong>R-Mode</strong>, que aprofita radiobalises i altres infraestructures marítimes terrestres per calcular la posició sense dependre dels satèl·lits.</span>
                   </p>
                   <p dir="ltr">
-                    <a href="#" onclick="return false;"><strong>Galileo</strong></a><span> també ha incorporat una nova capa de protecció. Des del juliol de 2025, el servei <strong>OSNMA</strong> permet comprovar que el missatge de navegació rebut procedeix realment de Galileo i no ha estat modificat. Pot ajudar a detectar determinats intents d’<em>spoofing</em>, però no evita que es produeixin ni protegeix contra el <em>jamming</em>.</span>
+                    <a href="https://www.euspa.europa.eu/galileo-osnma" target="_blank" rel="noopener noreferrer"><strong>Galileo</strong><span class="visually-hidden"> (s'obre en una pestanya nova)</span></a><span> també ha incorporat una nova capa de protecció. Des del juliol de 2025, el servei <strong>OSNMA</strong> permet comprovar que el missatge de navegació rebut procedeix realment de Galileo i no ha estat modificat. Pot ajudar a detectar determinats intents d’<em lang="en">spoofing</em>, però no evita que es produeixin ni protegeix contra el <em lang="en">jamming</em>.</span>
                   </p>
                   <p dir="ltr">
                     <span>És indubtable que la digitalització ha fet la navegació més precisa, eficient i segura. Però també ha convertit un senyal gairebé imperceptible, enviat des de milers de quilòmetres, en una baula essencial del comerç mundial. Davant d’aquesta nova vulnerabilitat, el port més intel·ligent no serà el que disposi de més dades, sinó el que sàpiga quan ha arribat el moment de dubtar-ne.</span>
@@ -161,25 +161,25 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
               </div>
 
               <!-- Related Articles Block -->
-              <div class="paragraph paragraph-articles-relacionats bundle-related-articles">
+              <aside aria-labelledby="related-articles-title-1" class="paragraph paragraph-articles-relacionats bundle-related-articles">
                 <div>
-                  <h2>Articles relacionats</h2>
+                  <h2 id="related-articles-title-1">Articles relacionats</h2>
                   <div class="grid grid-3-cols">
                     <div class="views-row">
                       <article class="article-relacionat">
                         <div class="image">
-                          <a href="#" onclick="return false;">
-                            <img loading="eager" src={`${baseUrl}/images/fons-mari-biodiversitat-port.jpg`} width="400" height="310" alt="Fons marí i biodiversitat litoral" />
+                          <a href={`${baseUrl}/article-2/`} tabindex="-1" aria-hidden="true">
+                            <img loading="eager" src={`${baseUrl}/images/fons-mari-biodiversitat-port.jpg`} width="400" height="310" alt="" />
                           </a>
                         </div>
                         <div class="tags">
-                          <div class="link-categories">
-                            <div class="taxonomy-link environment"><a href="#" onclick="return false;">Medi Ambient</a></div>
-                            <div class="taxonomy-link technology"><a href="#" onclick="return false;">Tecnologia</a></div>
+                          <div class="link-categories" role="list" aria-label="Categories de l'article relacionat">
+                            <div class="taxonomy-link environment" role="listitem"><a href="#" onclick="return false;">Medi Ambient</a></div>
+                            <div class="taxonomy-link technology" role="listitem"><a href="#" onclick="return false;">Tecnologia</a></div>
                           </div>
                         </div>
                         <div class="title">
-                          <a href="#" onclick="return false;">
+                          <a href={`${baseUrl}/article-2/`}>
                             Qui viu sota el port? Ciència ciutadana i tecnologia per descobrir un ecosistema revitalitzat
                           </a>
                         </div>
@@ -189,14 +189,14 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                     <div class="views-row">
                       <article class="article-relacionat">
                         <div class="image">
-                          <a href="#" onclick="return false;">
-                            <img loading="eager" src={`${baseUrl}/images/altasea-puerto-los-angeles-hub-economia-azul.jpg`} width="400" height="310" alt="Campus BlueTechPort i AltaSea" />
+                          <a href="#" onclick="return false;" tabindex="-1" aria-hidden="true">
+                            <img loading="eager" src={`${baseUrl}/images/altasea-puerto-los-angeles-hub-economia-azul.jpg`} width="400" height="310" alt="" />
                           </a>
                         </div>
                         <div class="tags">
-                          <div class="link-categories">
-                            <div class="taxonomy-link environment"><a href="#" onclick="return false;">Medi Ambient</a></div>
-                            <div class="taxonomy-link economy"><a href="#" onclick="return false;">Economia</a></div>
+                          <div class="link-categories" role="list" aria-label="Categories de l'article relacionat">
+                            <div class="taxonomy-link environment" role="listitem"><a href="#" onclick="return false;">Medi Ambient</a></div>
+                            <div class="taxonomy-link economy" role="listitem"><a href="#" onclick="return false;">Economia</a></div>
                           </div>
                         </div>
                         <div class="title">
@@ -210,14 +210,14 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                     <div class="views-row">
                       <article class="article-relacionat">
                         <div class="image">
-                          <a href="#" onclick="return false;">
-                            <img loading="eager" src={`${baseUrl}/images/buque-navegando-entre-hielo-artico-ruta-maritima-norte.jpg`} width="400" height="310" alt="Vaixell navegant entre gel àrtic" />
+                          <a href="#" onclick="return false;" tabindex="-1" aria-hidden="true">
+                            <img loading="eager" src={`${baseUrl}/images/buque-navegando-entre-hielo-artico-ruta-maritima-norte.jpg`} width="400" height="310" alt="" />
                           </a>
                         </div>
                         <div class="tags">
-                          <div class="link-categories">
-                            <div class="taxonomy-link logistics"><a href="#" onclick="return false;">Logística</a></div>
-                            <div class="taxonomy-link economy"><a href="#" onclick="return false;">Economia</a></div>
+                          <div class="link-categories" role="list" aria-label="Categories de l'article relacionat">
+                            <div class="taxonomy-link logistics" role="listitem"><a href="#" onclick="return false;">Logística</a></div>
+                            <div class="taxonomy-link economy" role="listitem"><a href="#" onclick="return false;">Economia</a></div>
                           </div>
                         </div>
                         <div class="title">
@@ -229,7 +229,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                     </div>
                   </div>
                 </div>
-              </div>
+              </aside>
             </div>
           </article>
         </div>
@@ -238,10 +238,10 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
   </main>
 
   <!-- Newsletter Subscription Block -->
-  <div class="newsletter-block">
+  <section class="newsletter-block" aria-labelledby="newsletter-title-1">
     <div class="newsletter-wrapper container" id="newsletter">
       <div class="col-first">
-        <h2>Subscriu-te al nostre butlletí!</h2>
+        <h2 id="newsletter-title-1">Subscriu-te al nostre butlletí!</h2>
       </div>
       <div class="col-second">
         <p>Subscriu-te al nostre butlletí! Cada mes t'enviem el millor de PierNext i et donem accés a publicacions exclusives i gratuïtes.</p>
@@ -250,28 +250,28 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
           <form class="newsletter-piernext-form-block" id="newsletter-piernext-form-block" onsubmit="event.preventDefault(); return false;">
             <div class="js-form-item form-item form-type-textfield form-item-name">
               <label for="edit-name" class="js-form-required form-required">Nom</label>
-              <input placeholder="ex: Maria" class="form-control form-text" type="text" id="edit-name" name="name" />
+              <input placeholder="ex: Maria" class="form-control form-text" type="text" id="edit-name" name="name" autocomplete="name" required aria-required="true" />
             </div>
             <div class="js-form-item form-item form-type-textfield form-item-company">
               <label for="edit-company" class="js-form-required form-required">Empresa</label>
-              <input placeholder="ex: Piernext" class="form-control form-text" type="text" id="edit-company" name="company" />
+              <input placeholder="ex: Piernext" class="form-control form-text" type="text" id="edit-company" name="company" autocomplete="organization" />
             </div>
             <div class="js-form-item form-item form-type-email form-item-email">
               <label for="edit-email" class="js-form-required form-required">Correu electrònic</label>
-              <input placeholder="ex: maria@domini.com" class="form-control form-email" type="email" id="edit-email" name="email" />
+              <input placeholder="ex: maria@domini.com" class="form-control form-email" type="email" id="edit-email" name="email" autocomplete="email" required aria-required="true" />
             </div>
             <div class="btn-wrapper">
-              <input class="btn btn-primary button js-form-submit form-submit" aria-label="Subscriu-te al nostre butlletí" type="button" onclick="return false;" id="edit-submit" value="Registra't" />
-              <span class="btn-arrow"></span>
+              <input class="btn btn-primary button js-form-submit form-submit" aria-label="Subscriu-te al nostre butlletí" type="submit" id="edit-submit" value="Registra't" />
+              <span class="btn-arrow" aria-hidden="true"></span>
             </div>
             <p class="legal-text">
-              Protecció de dades: L'Autoritat Portuària de Barcelona tractarà les vostres dades per gestionar la subscripció al butlletí de PierNext. Podeu exercir els vostres drets mitjançant el registre electrònic a <a href="#" onclick="return false;">https://seu.portdebarcelona.gob.es</a>. Consulteu <a href="#" onclick="return false;">el nostre avís legal fent clic aquí</a>.
+              Protecció de dades: L'Autoritat Portuària de Barcelona tractarà les vostres dades per gestionar la subscripció al butlletí de PierNext. Podeu exercir els vostres drets mitjançant el registre electrònic a <a href="https://seu.portdebarcelona.gob.es" target="_blank" rel="noopener noreferrer">https://seu.portdebarcelona.gob.es<span class="visually-hidden"> (s'obre en una pestanya nova)</span></a>. Consulteu <a href="#" onclick="return false;">el nostre avís legal</a>.
             </p>
           </form>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <Footer lang="ca" />
 </Layout>

@@ -7,7 +7,8 @@ const { lang = "es" } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<footer id="footer">
+<footer id="footer" aria-labelledby="footer-heading">
+  <h2 class="visually-hidden" id="footer-heading">{lang === 'ca' ? 'Peu de pàgina' : 'Pie de página'}</h2>
   <div class="container">
     <div class="d-flex space-between">
       <div class="first-col">
@@ -27,13 +28,13 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
           </div>
         </div>
         <div class="d-flex space-between logos-footer-mobile">
-          <img src={`${baseUrl}/icons/logo-white.svg`} alt="piernext" />
-          <img src={`${baseUrl}/icons/logo-port-white.svg`} alt="port de barcelona" />
+          <img src={`${baseUrl}/icons/logo-white.svg`} alt="PierNext" />
+          <img src={`${baseUrl}/icons/logo-port-white.svg`} alt="Port de Barcelona" />
         </div>
         <div class="menu-footer">
           <div>
-            <nav role="navigation" aria-labelledby="block-piernext-footer-menu" id="block-piernext-footer">
-              <h2 class="visually-hidden" id="block-piernext-footer-menu">Footer</h2>
+            <nav aria-labelledby="block-piernext-footer-menu" id="block-piernext-footer">
+              <h3 class="visually-hidden" id="block-piernext-footer-menu">{lang === 'ca' ? 'Enllaços del peu de pàgina' : 'Enlaces del pie de página'}</h3>
               <ul>
                 <li><a href="#" onclick="return false;">{lang === 'ca' ? 'Articles' : 'Artículos'}</a></li>
                 <li><a href="#" onclick="return false;">{lang === 'ca' ? 'Qui som?' : '¿Quiénes somos?'}</a></li>
@@ -49,29 +50,29 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
       <div class="second-col">
         <div class="d-flex space-between logos-footer-desktop">
-          <img src={`${baseUrl}/icons/logo-white.svg`} alt="piernext" />
-          <img src={`${baseUrl}/icons/logo-port-white.svg`} alt="port de barcelona" />
+          <img src={`${baseUrl}/icons/logo-white.svg`} alt="PierNext" />
+          <img src={`${baseUrl}/icons/logo-port-white.svg`} alt="Port de Barcelona" />
         </div>
         <div class="xarxes">
-          <ul>
+          <ul aria-label={lang === 'ca' ? "Xarxes socials" : "Redes sociales"}>
             <li>
-              <a href="#" onclick="return false;" aria-label="LinkedIn">
-                <img src={`${baseUrl}/icons/linkedin.svg`} alt="linkedin" />
+              <a href="#" onclick="return false;" aria-label={lang === 'ca' ? "Segueix PierNext a LinkedIn" : "Sigue a PierNext en LinkedIn"}>
+                <img src={`${baseUrl}/icons/linkedin.svg`} alt="" aria-hidden="true" />
               </a>
             </li>
             <li>
-              <a href="#" onclick="return false;" aria-label="Instagram">
-                <img src={`${baseUrl}/icons/instagram.svg`} alt="instagram" />
+              <a href="#" onclick="return false;" aria-label={lang === 'ca' ? "Segueix PierNext a Instagram" : "Sigue a PierNext en Instagram"}>
+                <img src={`${baseUrl}/icons/instagram.svg`} alt="" aria-hidden="true" />
               </a>
             </li>
             <li>
-              <a href="#" onclick="return false;" aria-label="Twitter">
-                <img src={`${baseUrl}/icons/twitter.svg`} alt="twitter" />
+              <a href="#" onclick="return false;" aria-label={lang === 'ca' ? "Segueix PierNext a X" : "Sigue a PierNext en X"}>
+                <img src={`${baseUrl}/icons/twitter.svg`} alt="" aria-hidden="true" />
               </a>
             </li>
             <li>
-              <a href="#" onclick="return false;" aria-label="Youtube">
-                <img src={`${baseUrl}/icons/youtube.svg`} alt="youtube" />
+              <a href="#" onclick="return false;" aria-label={lang === 'ca' ? "Segueix PierNext a YouTube" : "Sigue a PierNext en YouTube"}>
+                <img src={`${baseUrl}/icons/youtube.svg`} alt="" aria-hidden="true" />
               </a>
             </li>
           </ul>
