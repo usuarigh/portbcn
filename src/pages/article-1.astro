@@ -107,6 +107,21 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                   <p dir="ltr">
                     <span>L’<em lang="en">spoofing</em> és més subtil. En lloc de tapar el senyal, l’atacant n’emet un de fals que imita el legítim. L’aparell continua funcionant i mostra una posició aparentment coherent, però el vaixell no és on la pantalla diu que és.</span>
                   </p>
+
+                  <figure>
+                    <div>
+                      <img
+                        loading="lazy"
+                        src={`${baseUrl}/images/Infografies/perque_dificils_localitzar.png`}
+                        width="1200"
+                        height="675"
+                        alt="Infografia: Per què alguns vaixells són tan difícils de localitzar? Tècniques utilitzades en els vaixells: senyal perdut per transpondor AIS desactivat, senyal falsificat per spoofing d'AIS, senyal esglaonat per jamming satel·litari i seny desviat per GPS spoofing."
+                      />
+                    </div>
+                    <figcaption>
+                      Infografia: Principals tècniques d'interferència i engany GNSS utilitzades en el transport marítim.
+                    </figcaption>
+                  </figure>
                   <p dir="ltr">
                     <span>Aquesta vulnerabilitat té una explicació física. Els satèl·lits orbiten a uns 20.000 quilòmetres de la Terra i els seus senyals arriben a la superfície amb molt poca potència. Per això, una interferència emesa des d’un punt relativament pròxim pot imposar-se sobre el senyal autèntic, segons explica l’</span><a href="https://www.iala.int/e-bulletin/gnss-jamming-and-spoofing-navigating-challenges-in-the-baltic-sea/" target="_blank" rel="noopener noreferrer"><strong>IALA, l’organització internacional d’ajudes a la navegació marítima</strong><span class="visually-hidden"> (s'obre en una pestanya nova)</span></a><span>.</span>
                   </p>
