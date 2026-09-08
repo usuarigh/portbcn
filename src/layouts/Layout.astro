@@ -256,6 +256,19 @@ const ogImage = image.startsWith('http') ? image : `${baseUrl}${image.startsWith
       color: #0073ce;
     }
 
+    /* Article header title width: expand container and h1 to fit nicely in 2 lines */
+    .article-detail .header-article {
+      max-width: 980px !important;
+    }
+    .article-detail .header-article h1 {
+      max-width: 940px !important;
+    }
+    .article-detail .header-article .texto-lead {
+      max-width: 850px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
     /* Accessibility: clear focus ring for keyboard navigation (EN 301 549 / WCAG 2.4.7 & 2.4.11) */
     :focus-visible {
       outline: 3px solid #0072cf !important;
